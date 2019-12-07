@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Governorate;
 use App\Http\Requests\EyeRequest;
 use App\User;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class EyeController extends Controller
     public function create()
     {
         $eye = new User();
-        return view('pages.eye.form',compact('eye'));
+        $governorates = Governorate::all();
+        return view('pages.eye.form',compact('eye', 'governorates'));
     }
 
 
@@ -33,7 +35,8 @@ class EyeController extends Controller
 
     public function edit(User $eye)
     {
-        return view('pages.eye.form',compact('eye'));
+        $governorates = Governorate::all();
+        return view('pages.eye.form',compact('eye', 'governorates'));
     }
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Governorate;
 use App\Http\Requests\HospitalRequest;
 use App\User;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class HospitalController extends Controller
     public function create()
     {
         $hospital = new User();
-        return view('pages.hospital.form',compact('hospital'));
+        $governorates = Governorate::all();
+        return view('pages.hospital.form',compact('hospital', 'governorates'));
     }
 
 
@@ -33,7 +35,8 @@ class HospitalController extends Controller
 
     public function edit(User $hospital)
     {
-        return view('pages.hospital.form',compact('hospital'));
+        $governorates = Governorate::all();
+        return view('pages.hospital.form',compact('hospital', 'governorates'));
     }
 
 

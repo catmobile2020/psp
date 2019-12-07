@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Governorate;
 use App\Http\Requests\PharmacyRequest;
 use App\User;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class PharmacyController extends Controller
     public function create()
     {
         $pharmacy = new User();
-        return view('pages.pharmacy.form',compact('pharmacy'));
+        $governorates = Governorate::all();
+        return view('pages.pharmacy.form',compact('pharmacy', 'governorates'));
     }
 
 
@@ -33,7 +35,8 @@ class PharmacyController extends Controller
 
     public function edit(User $pharmacy)
     {
-        return view('pages.pharmacy.form',compact('pharmacy'));
+        $governorates = Governorate::all();
+        return view('pages.pharmacy.form',compact('pharmacy', 'governorates'));
     }
 
 
