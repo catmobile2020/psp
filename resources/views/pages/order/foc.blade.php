@@ -38,25 +38,19 @@
                             {{csrf_field()}}
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="serial_number">Patient Card</label>
-                                    <input type="text" class="form-control" id="serial_number" placeholder="Patient Card" name="serial_number">
+                                    <label for="serial_number">Serial number</label>
+                                    <input type="text" class="form-control" id="serial_number" placeholder="serial number" name="serial_number">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="code">Verification code</label>
-                                    <input type="text" class="form-control" id="code" placeholder="Verification code" name="code">
+                                    <label for="code">Code</label>
+                                    <input type="text" class="form-control" id="code" placeholder="code" name="code">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="pack_number">Pack Serial Number</label>
-                                    <input type="text" class="form-control" id="pack_number" placeholder="Pack Serial Number" name="pack_number">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="photo">upload a photo of the pack with sticker</label>
+                                    <label for="photo">Add attachment</label>
                                     <input type="file" name="photo" class="form-control" id="photo" />
                                 </div>
                             </div>

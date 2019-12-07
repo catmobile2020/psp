@@ -45,7 +45,7 @@ class VoucherController extends Controller
         $patient = User::where('serial_number',$request->serial_number)->first();
         if (!$patient)
         {
-            return redirect()->back()->with('message','Patient Card Wrong. Try Again!');
+            return redirect()->back()->with('message','Patient serial number Wrong. Try Again!');
         }
         $voucher = Voucher::where('code',$request->code)->where('patient_id',$patient->id)->first();
         if (!$voucher)

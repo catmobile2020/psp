@@ -61,6 +61,10 @@
         <h2>
             <a href="users/login">user</a>
         </h2>
+
+        <h2>
+            <a href="marketing/login">Novartis Marketing</a>
+        </h2>
 {{--        <h2>--}}
 {{--            <a href="/patients">patient</a>--}}
 {{--        </h2>--}}

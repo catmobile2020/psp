@@ -15,8 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email','national_id', 'age', 'sex','address', 'phone', 'phone2','diagnosis', 'type',
-        'serial_number', 'specialty', 'preferred_distributor','password','doctor_id', 'governorate_id', 'call_center_id',
+        'name', 'username', 'email','national_id', 'age', 'sex','address', 'phone', 'diagnosis','type', 'doctor_id','call_center_id', 'password', 'serial_number','foc',
     ];
 
     /**
@@ -73,6 +72,21 @@ class User extends Authenticatable
         return $this->hasMany('App\Order');
     }
 
+    public function tests()
+    {
+        return $this->hasMany('App\Test');
+    }
+
+    public function examinations()
+    {
+        return $this->hasMany('App\Examination');
+    }
+
+    public function vouchers()
+    {
+        return $this->hasMany('App\Voucher');
+    }
+
     public function patientOrders()
     {
         return $this->hasMany('App\Order','patient_id');
@@ -96,5 +110,15 @@ class User extends Authenticatable
     public function doctorRow()
     {
         return $this->belongsTo($this,'doctor_id');
+    }
+
+    public function patients()
+    {
+        return $this->hasMany($this,'doctor_id');
+    }
+
+    public function governorate()
+    {
+        return $this->belongsTo('App\Governorate');
     }
 }

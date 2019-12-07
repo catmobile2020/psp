@@ -46,7 +46,7 @@
                                     <input type="text" name="username" class="form-control" id="username" placeholder="username" value="{{$doctor->username}}">
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-3">
                                 <div class="form-group">
                                     <label for="email">email</label>
                                     <input type="email" name="email" class="form-control" id="email" placeholder="email" value="{{$doctor->email}}">
@@ -54,31 +54,8 @@
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label for="phone">Personal Phone</label>
-                                    <input type="text" name="phone" class="form-control" id="phone" placeholder="Personal Phone" value="{{$doctor->phone}}">
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="form-group">
-                                    <label for="phone2">Clinic Phone</label>
-                                    <input type="text" name="phone2" class="form-control" id="phone2" placeholder="Clinic Phone" value="{{$doctor->phone2}}">
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="form-group">
-                                    <label for="specialty">Specialty</label>
-                                    <input type="text" name="specialty" class="form-control" id="specialty" placeholder="Specialty" value="{{$doctor->specialty}}">
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="form-group">
-                                    <label for="specialty">Governorate</label>
-                                    <select name="governorate_id" class="form-control">
-                                        <option selected value>Select Governorate</option>
-                                        @foreach($governorates as $governorate)
-                                            <option value="{{$governorate->id}}" {{$governorate->id == $doctor->governorate_id ? 'selected' : ''}}>{{$governorate->name}}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="phone">phone</label>
+                                    <input type="text" name="phone" class="form-control" id="phone" placeholder="phone" value="{{$doctor->phone}}">
                                 </div>
                             </div>
                             <div class="col-lg-6">

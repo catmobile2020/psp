@@ -37,7 +37,7 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Verification code</th>
+                                    <th>Code</th>
                                     <th>was_used</th>
                                     <th>notes</th>
                                     <th>CLIENT CODE</th>
@@ -62,7 +62,7 @@
                                 <tfoot>
                                 <tr>
                                     <th>#</th>
-                                    <th>Verification code</th>
+                                    <th>Code</th>
                                     <th>was_used</th>
                                     <th>notes</th>
                                     <th>CLIENT CODE</th>

@@ -41,10 +41,6 @@ class PatientController extends Controller
 
     public function update(PatientRequest $request, User $patient)
     {
-        if (!$request->password)
-        {
-            unset($request['password']);
-        }
         $inputs = $request->all();
         $patient->update($inputs);
         return redirect()->route('patients.index')->with('message','Done Successfully');

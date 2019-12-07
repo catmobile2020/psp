@@ -40,10 +40,6 @@ class LaboratoryController extends Controller
 
     public function update(LaboratoryRequest $request, User $laboratory)
     {
-        if (!$request->password)
-        {
-            unset($request['password']);
-        }
         $laboratory->update($request->all());
         return redirect()->route('laboratories.index')->with('message','Done Successfully');
     }

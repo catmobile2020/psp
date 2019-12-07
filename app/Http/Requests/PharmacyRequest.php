@@ -28,7 +28,6 @@ class PharmacyRequest extends FormRequest
             'email'=>'required|email',
             'address'=>'required',
             'phone'=>'required',
-            'preferred_distributor'=>'required',
         ];
 
         if ($this->routeIs('pharmacies.update'))

@@ -39,10 +39,6 @@ class HospitalController extends Controller
 
     public function update(HospitalRequest $request, User $hospital)
     {
-        if (!$request->password)
-        {
-            unset($request['password']);
-        }
         $hospital->update($request->all());
         return redirect()->route('hospitals.index')->with('message','Done Successfully');
     }

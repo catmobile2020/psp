@@ -39,10 +39,6 @@ class PharmacyController extends Controller
 
     public function update(PharmacyRequest $request, User $pharmacy)
     {
-        if (!$request->password)
-        {
-            unset($request['password']);
-        }
         $pharmacy->update($request->all());
         return redirect()->route('pharmacies.index')->with('message','Done Successfully');
     }

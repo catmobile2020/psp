@@ -28,8 +28,6 @@ class DoctorRequest extends FormRequest
             'email'=>'required|email',
             'address'=>'required',
             'phone'=>'required',
-            'specialty'=>'required',
-            'governorate_id'=>'required|exists:governorates,id',
         ];
 
         if ($this->routeIs('doctors.update'))

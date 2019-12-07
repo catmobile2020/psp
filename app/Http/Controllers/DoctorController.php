@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Governorate;
 use App\Http\Requests\DoctorRequest;
 use App\User;
 use Illuminate\Http\Request;
@@ -19,8 +18,7 @@ class DoctorController extends Controller
     public function create()
     {
         $doctor = new User();
-        $governorates = Governorate::all();
-        return view('pages.doctor.form',compact('doctor','governorates'));
+        return view('pages.doctor.form',compact('doctor'));
     }
 
 
@@ -35,17 +33,12 @@ class DoctorController extends Controller
 
     public function edit(User $doctor)
     {
-        $governorates = Governorate::all();
-        return view('pages.doctor.form',compact('doctor','governorates'));
+        return view('pages.doctor.form',compact('doctor'));
     }
 
 
     public function update(DoctorRequest $request, User $doctor)
     {
-        if (!$request->password)
-        {
-            unset($request['password']);
-        }
         $doctor->update($request->all());
         return redirect()->route('doctors.index')->with('message','Done Successfully');
     }
@@ -61,6 +54,6 @@ class DoctorController extends Controller
     {
         $doctor = auth('web')->user();
         $rows = User::where('doctor_id',$doctor->id)->latest()->paginate(20);
-        return view('pages.doctor.patients',compact('rows'));
+        return view('pages.doctor.patients',compact('rows', 'doctor'));
     }
 }
