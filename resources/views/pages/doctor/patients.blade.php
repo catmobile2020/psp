@@ -33,6 +33,28 @@
                                     <th>username</th>
                                     <th>email</th>
                                     <th>call center</th>
+                                    @if($doctor->callcenter->program->id == 1)
+                                        <th>All packs</th>
+                                        <th>Paid packs</th>
+                                        <th>Free packs</th>
+                                    @endif
+                                    @if($doctor->callcenter->program->id == 2)
+                                        <th>All tests</th>
+                                        <th>Activated tests</th>
+                                        <th>Inactivated tests</th>
+                                    @endif
+                                    @if($doctor->callcenter->program->id == 3)
+                                        <th>All examinations</th>
+                                        <th>Activated examinations</th>
+                                        <th>Inactivated examinations</th>
+                                    @endif
+                                    @if($doctor->callcenter->program->id == 4)
+                                        <th>All Vouchers</th>
+                                        <th>Used Vouchers</th>
+                                        <th>Unused Vouchers</th>
+                                    @endif
+
+
                                     <th>Created At</th>
                                 </tr>
                                 </thead>
@@ -44,6 +66,26 @@
                                         <td>{{$row->username}}</td>
                                         <td>{{$row->email}}</td>
                                         <td>{{$row->callCenter->name}}</td>
+                                        @if($doctor->callcenter->program->id == 1)
+                                            <td>{{ $row->patientOrders->count() }}</td>
+                                            <td>{{ $row->patientOrders->where('has_free', 0)->count() }}</td>
+                                            <td>{{ $row->patientOrders->where('has_free', 1)->count()}}</td>
+                                        @endif
+                                        @if($doctor->callcenter->program->id == 2)
+                                            <td>{{ $row->patientTests->count() }}</td>
+                                            <td>{{ $row->patientTests->where('activated', 1)->count()}}</td>
+                                            <td>{{ $row->patientTests->where('activated', 0)->count()}}</td>
+                                        @endif
+                                        @if($doctor->callcenter->program->id == 3)
+                                            <td>{{ $row->patientExamination->count() }}</td>
+                                            <td>{{ $row->patientExamination->where('activated', 1)->count()}}</td>
+                                            <td>{{ $row->patientExamination->where('activated', 0)->count()}}</td>
+                                        @endif
+                                        @if($doctor->callcenter->program->id == 4)
+                                            <td>{{ $row->patientVouchers->count() }}</td>
+                                            <td>{{ $row->patientVouchers->where('was_used', 1)->count() }}</td>
+                                            <td>{{ $row->patientVouchers->where('was_used', 0)->count() }}</td>
+                                        @endif
                                         <td>{{$row->created_at->format('Y-m-d')}}</td>
                                     </tr>
                                 @endforeach
@@ -56,6 +98,26 @@
                                     <th>username</th>
                                     <th>email</th>
                                     <th>call center</th>
+                                    @if($doctor->callcenter->program->id == 1)
+                                        <th>All packs</th>
+                                        <th>Paid packs</th>
+                                        <th>Free packs</th>
+                                    @endif
+                                    @if($doctor->callcenter->program->id == 2)
+                                        <th>All tests</th>
+                                        <th>Activated tests</th>
+                                        <th>Inactivated tests</th>
+                                    @endif
+                                    @if($doctor->callcenter->program->id == 3)
+                                        <th>All examinations</th>
+                                        <th>Activated examinations</th>
+                                        <th>Inactivated examinations</th>
+                                    @endif
+                                    @if($doctor->callcenter->program->id == 4)
+                                        <th>All Vouchers</th>
+                                        <th>Used Vouchers</th>
+                                        <th>Unused Vouchers</th>
+                                    @endif
                                     <th>Created At</th>
                                 </tr>
                                 </tfoot>

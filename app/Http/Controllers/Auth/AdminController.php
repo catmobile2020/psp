@@ -31,6 +31,8 @@ class AdminController extends Controller
             if (Hash::check($request->password,$row->password))
             {
                 auth()->guard('admin')->login($row,$request->remember);
+                if(auth()->guard('admin')->user()->type == 3)
+                    return redirect()->intended('/marketing');
                 return redirect()->intended('/admin');
             }
         }
@@ -39,8 +41,11 @@ class AdminController extends Controller
 
     public function logout()
     {
+        $type = auth()->guard('admin')->user()->type;
         auth()->guard('admin')->logout();
         request()->session()->invalidate();
+        if($type == 3)
+            return redirect()->route('marketing.login');
         return redirect()->route('admin.login');
     }
 }

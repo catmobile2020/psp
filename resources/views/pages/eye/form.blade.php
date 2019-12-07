@@ -34,16 +34,27 @@
                             @isset($eye->id)
                                 <input type="hidden" name="_method" value="PUT"/>
                             @endisset
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="name">name</label>
                                     <input type="text" name="name" class="form-control" id="name" placeholder="name" value="{{$eye->name}}">
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="username">username</label>
                                     <input type="text" name="username" class="form-control" id="username" placeholder="username" value="{{$eye->username}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="specialty">Governorate</label>
+                                    <select name="governorate_id" class="form-control">
+                                        <option selected value>Select Governorate</option>
+                                        @foreach($governorates as $governorate)
+                                            <option value="{{$governorate->id}}" {{$governorate->id == $eye->governorate_id ? 'selected' : ''}}>{{$governorate->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-3">

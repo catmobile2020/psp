@@ -30,6 +30,34 @@ Route::group(['prefix'=>'/admin'],function (){
     });
 });
 
+//marketing routes
+
+Route::group(['prefix'=>'/marketing'],function (){
+    Route::group(['namespace'=>'Auth'],function (){
+        Route::get('/login','AdminController@index')->name('marketing.login');
+        Route::post('/login','AdminController@login')->name('marketing.login');
+        Route::get('/logout','AdminController@logout')->name('marketing.logout');
+    });
+
+    Route::group(['middleware'=>['auth:admin']],function (){
+        Route::get('/','HomeController@index')->name('home');
+        Route::get('/novartis-programs','HomeController@myPrograms')->name('novartis.programs');
+        Route::get('/statistics','MarketingController@index')->name('marketing.index');
+        Route::get('/patient-statistics','MarketingController@patientStatistics')->name('marketing.patient-statistics');
+        Route::get('/doctor-statistics','MarketingController@doctorStatistics')->name('marketing.doctor-statistics');
+        Route::get('/pharmacy-statistics','MarketingController@pharmacyStatistics')->name('marketing.pharmacy-statistics');
+        Route::get('/laboratory-statistics','MarketingController@labStatistics')->name('marketing.lab-statistics');
+        Route::get('/hospital-statistics','MarketingController@hospitalStatistics')->name('marketing.hospital-statistics');
+        Route::get('/health-statistics','MarketingController@healthStatistics')->name('marketing.health-statistics');
+
+
+        Route::get('/profile','ProfileController@index')->name('profile');
+        Route::post('/profile','ProfileController@update')->name('profile.update');
+
+
+    });
+});
+
 Route::group(['prefix'=>'/call-centers'],function (){
     Route::group(['namespace'=>'Auth'],function (){
         Route::get('/login','CallCenterController@index')->name('callcenter.login');

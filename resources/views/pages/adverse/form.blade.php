@@ -60,7 +60,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Gender</label>
-                                    <select name="gender" class="form-control" >
+                                    <select name="gender" class="form-control select" >
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                     </select>
@@ -99,7 +99,7 @@
                             <div class="col-lg-3">
                                 <div class="form-group">
                                     <label>Is it serious</label>
-                                    <select name="is_serious" class="form-control" >
+                                    <select name="is_serious" class="form-control select" >
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
@@ -108,7 +108,7 @@
                             <div class="col-lg-3">
                                 <div class="form-group">
                                     <label>Is it drug-related</label>
-                                    <select name="is_drug_related" class="form-control" >
+                                    <select name="is_drug_related" class="form-control select" >
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>

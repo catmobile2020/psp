@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Governorate;
 use App\Http\Requests\LaboratoryRequest;
 use App\User;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class LaboratoryController extends Controller
     {
 
         $laboratory = new User();
-        return view('pages.laboratory.form',compact('laboratory'));
+        $governorates = Governorate::all();
+        return view('pages.laboratory.form',compact('laboratory', 'governorates'));
     }
 
 
@@ -34,7 +36,8 @@ class LaboratoryController extends Controller
 
     public function edit(User $laboratory)
     {
-        return view('pages.laboratory.form',compact('laboratory'));
+        $governorates = Governorate::all();
+        return view('pages.laboratory.form',compact('laboratory', 'governorates'));
     }
 
 

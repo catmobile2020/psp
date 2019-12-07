@@ -24,6 +24,7 @@ img.avatar {
 	width: 60px;
 	height: 60px;
 }
+
 .md-editor {
 	margin-bottom: 30px;
 }
@@ -3466,4 +3467,9 @@ ul.mail-attachment li {
 .table-responsive{
 	overflow-y: hidden;
 	text-align: center;
+}
+
+
+.select{
+	height: 39px !important;
 }

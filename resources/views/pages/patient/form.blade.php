@@ -1,4 +1,4 @@
-@extends('layouts.master')
+ @extends('layouts.master')
 
 @section('title','patients')
 
@@ -43,7 +43,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="email">Select Doctor</label>
-                                    <select class="form-control" name="doctor_id">
+                                    <select class="form-control select" name="doctor_id">
                                         <option selected value>Select Doctor</option>
                                         @foreach($doctors as $doctor)
                                             <option value="{{$doctor->id}}" {{$doctor->id == $patient->doctor_id ? 'selected' : ''}}>{{$doctor->name}}</option>
@@ -96,7 +96,18 @@
                                     <input type="text" name="address" class="form-control" id="address" placeholder="address" value="{{$patient->address}}">
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="specialty">Governorate</label>
+                                    <select name="governorate_id" class="form-control">
+                                        <option selected value>Select Governorate</option>
+                                        @foreach($governorates as $governorate)
+                                            <option value="{{$governorate->id}}" {{$governorate->id == $patient->governorate_id ? 'selected' : ''}}>{{$governorate->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
                                 <div class="form-group">
                                     <label for="phone">phone</label>
                                     <input type="text" name="phone" class="form-control" id="phone" placeholder="phone" value="{{$patient->phone}}">

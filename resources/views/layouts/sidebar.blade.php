@@ -42,10 +42,21 @@
                     <i class="icon-doc-text-inv"></i><span class="title">Adverse event reporting</span>
                 </a>
             </li>
+            @elseif(auth('admin')->user()->type == 2)
+                <li>
+                    <a href="{{route('novartis.programs')}}">
+                        <i class="icon-doc-text-inv"></i><span class="title">Programs</span>
+                    </a>
+                </li>
             @else
                 <li>
-                     <a href="{{route('novartis.programs')}}">
+                    <a href="{{route('novartis.programs')}}">
                         <i class="icon-doc-text-inv"></i><span class="title">Programs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('marketing.index')}}">
+                        <i class="icon-chart-pie"></i><span class="title">Statistics</span>
                     </a>
                 </li>
             @endif
@@ -154,7 +165,7 @@
                     </ul>
                 </li>
             @endif
-               
+
         @endif
 
         <li>

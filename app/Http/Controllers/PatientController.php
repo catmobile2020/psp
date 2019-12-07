@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Governorate;
 use App\Http\Requests\PatientRequest;
 use App\User;
 use Illuminate\Http\Request;
@@ -19,8 +20,9 @@ class PatientController extends Controller
     {
         $auth_user =auth('callcenter')->user();
         $patient = new User();
+        $governorates = Governorate::all();
         $doctors = User::doctor()->where('call_center_id',$auth_user->id)->get();
-        return view('pages.patient.form',compact('patient','doctors'));
+        return view('pages.patient.form',compact('patient','doctors', 'governorates'));
     }
 
 
@@ -35,7 +37,10 @@ class PatientController extends Controller
 
     public function edit(User $patient)
     {
-        return view('pages.patient.form',compact('patient','programs'));
+        $auth_user =auth('callcenter')->user();
+        $governorates = Governorate::all();
+        $doctors = User::doctor()->where('call_center_id',$auth_user->id)->get();
+        return view('pages.patient.form',compact('patient','programs', 'doctors', 'governorates'));
     }
 
 

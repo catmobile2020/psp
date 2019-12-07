@@ -61,6 +61,6 @@ class DoctorController extends Controller
     {
         $doctor = auth('web')->user();
         $rows = User::where('doctor_id',$doctor->id)->latest()->paginate(20);
-        return view('pages.doctor.patients',compact('rows'));
+        return view('pages.doctor.patients',compact('rows', 'doctor'));
     }
 }
