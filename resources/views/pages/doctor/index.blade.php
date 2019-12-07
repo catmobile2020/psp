@@ -37,6 +37,7 @@
                                     <th>name</th>
                                     <th>username</th>
                                     <th>email</th>
+                                    <th>specialty</th>
                                     <th>call center</th>
                                     <th>Created At</th>
                                     <th>Action</th>
@@ -49,6 +50,7 @@
                                         <td>{{$row->name}}</td>
                                         <td>{{$row->username}}</td>
                                         <td>{{$row->email}}</td>
+                                        <td>{{$row->specialty}}</td>
                                         <td>{{$row->callCenter->name}}</td>
                                         <td>{{$row->created_at->format('Y-m-d')}}</td>
                                         <td class="size-80">
@@ -72,6 +74,7 @@
                                     <th>name</th>
                                     <th>username</th>
                                     <th>email</th>
+                                    <th>specialty</th>
                                     <th>call center</th>
                                     <th>Created At</th>
                                     <th>Action</th>

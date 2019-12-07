@@ -34,18 +34,48 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Message</th>
+                                    <th>Report type</th>
+                                    <th>Patient initials</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Reaction onset date</th>
+                                    <th>Suspected Novartis Drug</th>
+                                    <th>Dose</th>
+                                    <th>Indication</th>
+                                    <th>Reaction description</th>
+                                    <th>Is it serious</th>
+                                    <th>Is it drug-related</th>
+                                    <th>Concomitant medications</th>
+                                    <th>Other relevant medical history</th>
+                                    <th>Batch number</th>
+                                    <th>Treating physician</th>
+                                    <th>Reporter name</th>
+                                    <th>Date</th>
                                     <th>NAME</th>
-                                    <th>Created At</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($rows as $row)
                                     <tr class="gradeX">
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$row->message}}</td>
+                                        <td>{{$row->report_type}}</td>
+                                        <td>{{$row->patient_initials}}</td>
+                                        <td>{{$row->age}}</td>
+                                        <td>{{$row->gender}}</td>
+                                        <td>{{$row->reaction_onset_date}}</td>
+                                        <td>{{$row->suspected_novartis_drug}}</td>
+                                        <td>{{$row->dose}}</td>
+                                        <td>{{$row->indication}}</td>
+                                        <td>{{$row->reaction_description}}</td>
+                                        <td>{{$row->is_serious ? 'Yes' : 'No'}}</td>
+                                        <td>{{$row->is_drug_related ? 'Yes' : 'No'}}</td>
+                                        <td>{{$row->concomitant_medications}}</td>
+                                        <td>{{$row->medical_history}}</td>
+                                        <td>{{$row->batch_number}}</td>
+                                        <td>{{$row->treating_physician}}</td>
+                                        <td>{{$row->reporter_name}}</td>
+                                        <td>{{$row->Date}}</td>
                                         <td>{{$row->callCenter->name}}</td>
-                                        <td>{{\Carbon\Carbon::parse($row->created_at)->format('Y-m-d h:i A')}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -53,9 +83,24 @@
                                 <tfoot>
                                 <tr>
                                     <th>#</th>
-                                    <th>Message</th>
+                                    <th>Report type</th>
+                                    <th>Patient initials</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Reaction onset date</th>
+                                    <th>Suspected Novartis Drug</th>
+                                    <th>Dose</th>
+                                    <th>Indication</th>
+                                    <th>Reaction description</th>
+                                    <th>Is it serious</th>
+                                    <th>Is it drug-related</th>
+                                    <th>Concomitant medications</th>
+                                    <th>Other relevant medical history</th>
+                                    <th>Batch number</th>
+                                    <th>Treating physician</th>
+                                    <th>Reporter name</th>
+                                    <th>Date</th>
                                     <th>NAME</th>
-                                    <th>Created At</th>
                                 </tr>
                                 </tfoot>
                             </table>

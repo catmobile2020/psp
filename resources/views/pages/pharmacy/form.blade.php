@@ -58,7 +58,13 @@
                                     <input type="text" name="phone" class="form-control" id="phone" placeholder="phone" value="{{$pharmacy->phone}}">
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="preferred_distributor">Preferred Distributor</label>
+                                    <input type="text" name="preferred_distributor" class="form-control" id="preferred_distributor" placeholder="Preferred Distributor" value="{{$pharmacy->preferred_distributor}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
                                 <div class="form-group">
                                     <label for="address">address</label>
                                     <input type="text" name="address" class="form-control" id="address" placeholder="address" value="{{$pharmacy->address}}">

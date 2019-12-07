@@ -39,6 +39,10 @@ class EyeController extends Controller
 
     public function update(EyeRequest $request, User $eye)
     {
+        if (!$request->password)
+        {
+            unset($request['password']);
+        }
         $eye->update($request->all());
         return redirect()->route('eyes.index')->with('message','Done Successfully');
     }

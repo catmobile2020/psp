@@ -25,6 +25,7 @@ class OrderRequest extends FormRequest
     {
         $data = [
             'serial_number'=>'required',
+            'pack_number'=>'required',
             'photo'=>'required',
         ];
         if ($this->routeIs('orders.foc'))

@@ -33,8 +33,8 @@
                             {{csrf_field()}}
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="name">code</label>
-                                    <input type="text" class="form-control" id="name" placeholder="code" name="code">
+                                    <label for="name">Verification code</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Verification code" name="code">
                                 </div>
                             </div>
                             <div class="col-lg-6">

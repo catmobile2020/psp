@@ -24,7 +24,23 @@ class AdverseRequest extends FormRequest
     public function rules()
     {
         return [
-            'message'=>'required|min:1'
+            'report_type'=>'required',
+            'patient_initials'=>'required',
+            'age'=>'required|min:1',
+            'gender'=>'required',
+            'reaction_onset_date'=>'required',
+            'suspected_novartis_drug'=>'required',
+            'dose'=>'required',
+            'indication'=>'required',
+            'reaction_description'=>'required',
+            'is_serious'=>'required',
+            'is_drug_related'=>'required',
+            'concomitant_medications'=>'required',
+            'medical_history'=>'required',
+            'batch_number'=>'required',
+            'treating_physician'=>'required',
+            'reporter_name'=>'required',
+            'Date'=>'required',
         ];
     }
 }

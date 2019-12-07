@@ -38,6 +38,10 @@ class CallCenterController extends Controller
 
     public function update(CallCenterRequest $request, CallCenter $callcenter)
     {
+        if (!$request->password)
+        {
+            unset($request['password']);
+        }
         $inputs = $request->all();
         $callcenter->update($inputs);
         return redirect()->route('callcenters.index')->with('message','Done Successfully');

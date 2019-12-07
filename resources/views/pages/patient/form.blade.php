@@ -36,8 +36,8 @@
                             @endisset
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="serial_number">serial number</label>
-                                    <input type="text" name="serial_number" class="form-control" id="serial_number" placeholder="serial number" value="{{$patient->serial_number}}">
+                                    <label for="serial_number">Patient Card</label>
+                                    <input type="text" name="serial_number" class="form-control" id="serial_number" placeholder="Patient Card" value="{{$patient->serial_number}}">
                                 </div>
                             </div>
                             <div class="col-lg-6">

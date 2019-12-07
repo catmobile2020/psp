@@ -36,6 +36,10 @@ class ProgramController extends Controller
 
     public function update(ProgramRequest $request, Program $program)
     {
+        if (!$request->password)
+        {
+            unset($request['password']);
+        }
         $program->update($request->all());
         return redirect()->route('programs.index')->with('message','Done Successfully');
     }
